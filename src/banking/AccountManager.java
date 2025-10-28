@@ -7,7 +7,9 @@ public class AccountManager {
 	private Account[] accArray ;
 	
 	private Scanner scan;
-	private int cnt;  
+	private int cnt;
+
+	private Object accNumber;  
 	
     
 	public AccountManager() {
@@ -37,7 +39,7 @@ public class AccountManager {
 	public void depositMoney() {
 		
 		//Scanner scan = new Scanner(System.in);
-		System.out.println("입  금");
+		
 		System.out.print("계좌번호:");
 		String accNumber = scan.nextLine();
 		
@@ -54,24 +56,40 @@ public class AccountManager {
 	        }
 			
 		}
-		
-		
-		
+			
 	}
 	
 	
 	public void withdrawMoney() {
 		
-		Scanner scan = new Scanner(System.in);
+		//Scanner scan = new Scanner(System.in);
+		
+		System.out.print("출금액: ");
+		System.out.println("계좌번호와 출금할 금액을 입력하세요");
+		 
 		System.out.print("계좌번호:");
 		String accNumber = scan.nextLine();
-		System.out.print("이름:");
-		String name = scan.nextLine();
-		System.out.print("출금액:");
-		int balance = scan.nextInt();
-		System.out.println("--출금 완료--");
 		
-	}
+		System.out.print("출금액:");
+
+		int withdrawAmount = scan.nextInt();
+		scan.nextLine();
+		
+		for (int i = 0; i < cnt; i++) {
+			if (accArray[i].accNumber.equals(accNumber)) {
+				
+				accArray[i].withdraw(withdrawAmount);
+				
+				System.out.println("--출금 완료--");
+				break;
+			}
+	            
+		}
+		
+	}	
+		
+		
+	
 	
 	
 	public void showAccInfo() {

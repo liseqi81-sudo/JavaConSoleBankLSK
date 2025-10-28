@@ -36,7 +36,7 @@ public class BankingSystemMain {
 				Am.depositMoney();
 				break;
 			case 3:
-				System.out.println("출 금");
+				System.out.println();
 				Am.withdrawMoney();
 				break;
 			case 4:
