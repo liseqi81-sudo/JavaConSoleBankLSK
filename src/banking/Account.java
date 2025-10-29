@@ -17,19 +17,14 @@ public class Account {
         return accNumber;
     }
 
-	 public int getBalance() {
-	        return balance;
-	    }
-	
-    public void deposit(int amount) {
-        balance += amount;
+	public int getBalance() {
+        return balance;
     }
 	
-    public void withdraw(int amount) {
-        balance -= amount;
-    }
-
-
+	//오버라이딩을 목적으로 생성한 메서드 
+    public void deposit(int amount) {}	
+    public void withdraw(int amount) {}
+    
 	public void showAccInfo() {
 		System.out.print("계좌번호:"+ this.accNumber);
 		System.out.print(", 이름:"+ this.name);

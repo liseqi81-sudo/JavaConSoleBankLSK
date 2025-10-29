@@ -29,10 +29,19 @@ public class BankingSystemMain {
 			switch(menu) {
 			case 1: 
 				System.out.println("계좌개설");
-				Am.makeAccount();
+				System.out.println("1.보통계좌");
+				System.out.println("2.신용신뢰계좌");
+				System.out.print("선택: ");				
+				int makeAccount = scan.nextInt();
+				scan.nextLine();
+				
+				Am.makeAccount(makeAccount);
 				break;
 			case 2:
 				System.out.println("입 금");
+				//System.out.print("기본이자%(정수형태로입력): ");
+				//int interestRate = scan.nextInt();
+				//scan.nextLine();
 				Am.depositMoney();
 				break;
 			case 3:
@@ -40,14 +49,13 @@ public class BankingSystemMain {
 				Am.withdrawMoney();
 				break;
 			case 4:
-				System.out.println("전체계좌정보출력");
+				System.out.println();
 				Am.showAccInfo();
 				break;
 			
 			case 5:	
-				System.out.println("프로그램종료");
+				System.out.println();
 				System.exit(0);
-			
 			}
 		}
 	}
