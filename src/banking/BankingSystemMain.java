@@ -44,16 +44,16 @@ public class BankingSystemMain {
 				//scan.nextLine();
 				Am.depositMoney();
 				break;
-			case 3:
+			case ICustomDefine.WITHDRAW:
 				System.out.println();
 				Am.withdrawMoney();
 				break;
-			case 4:
+			case ICustomDefine.INQUIRE:
 				System.out.println();
 				Am.showAccInfo();
 				break;
 			
-			case 5:	
+			case ICustomDefine.EXIT:	
 				System.out.println();
 				System.exit(0);
 			}
