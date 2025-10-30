@@ -22,7 +22,7 @@ public class HighCreditAccount extends Account{
 		double extraInterestRate = 0.0;
 		switch (grade) {
         case "A":
-        	extraInterestRate = 0.07;
+        	extraInterestRate = ICustomDefine.A;
             break;
         case "B":
         	extraInterestRate = 0.04;

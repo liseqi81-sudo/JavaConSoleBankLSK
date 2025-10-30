@@ -27,7 +27,7 @@ public class BankingSystemMain {
 			scan.nextLine();
 			
 			switch(menu) {
-			case 1: 
+			case ICustomDefine.MAKE: 
 				System.out.println("계좌개설");
 				System.out.println("1.보통계좌");
 				System.out.println("2.신용신뢰계좌");
@@ -37,7 +37,7 @@ public class BankingSystemMain {
 				
 				Am.makeAccount(makeAccount);
 				break;
-			case 2:
+			case ICustomDefine.DEPOSIT:
 				System.out.println("입 금");
 				//System.out.print("기본이자%(정수형태로입력): ");
 				//int interestRate = scan.nextInt();

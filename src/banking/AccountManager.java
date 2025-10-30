@@ -9,7 +9,7 @@ public class AccountManager {
 	private Scanner scan;
 	private int cnt;
 
-	private Object accNumber;  
+	//private Object accNumber;
 	
     
 	public AccountManager() {
@@ -55,7 +55,7 @@ public class AccountManager {
 	
 	public void depositMoney() {
 		
-		Scanner scan = new Scanner(System.in);
+		//Scanner scan = new Scanner(System.in);
 		System.out.print("계좌번호:");
 		String accNumber = scan.nextLine();		
 		System.out.print("입금액:");
