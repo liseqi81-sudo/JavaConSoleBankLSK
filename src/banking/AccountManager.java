@@ -1,27 +1,35 @@
 package banking;
 
+import java.util.HashSet;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class AccountManager {
 	
-	private Account[] accArray ;
+	//private Account[] accArray ;
+	
+	//Account타입의 인스턴스를 저장할 수 있는 Set 생성
+	private HashSet<Account> accArray;
 	
 	private Scanner scan;
 	private int cnt;
 
 	//private Object accNumber;
 	public AccountManager() {
-		accArray = new Account[50];
-		cnt = 0;
+		//accArray = new Account[50];
+		//cnt = 0;
+		
+		//Set 인스턴스 생성
+		//컬렉션은 자동 인덱싱이 되므로 카운트용 변수 필요없음 
+		accArray = new HashSet<Account>();
+		
 		scan = new Scanner(System.in);
 	}
 	public void makeAccount(int gubun) {
 		System.out.println("=====================");
 
-		try {
-			
-		//공통사항 입력
+		try {			
+			//공통사항 입력
 			System.out.print("계좌번호:");
 			String accNumber = scan.nextLine();
 			System.out.print("이름:");
@@ -30,23 +38,29 @@ public class AccountManager {
 			int balance = scan.nextInt();
 			scan.nextLine();
 		
-		if(gubun==1) {
-			//보통계좌 생성
-			System.out.print("이자율:");
-			int interest = scan.nextInt();
-			scan.nextLine();
-			
-			accArray[cnt++] = new NormalAccount(accNumber, name, balance, interest);			
-		}
-		else if(gubun==2) {
-			//신용신뢰계좌 생성
-			System.out.print("이자율:");
-			int interest = scan.nextInt();
-			scan.nextLine();
-			System.out.print("회원등급:");
-			String grade = scan.nextLine();
+			if(gubun==1) {
+				//보통계좌 생성
+				System.out.print("이자율:");
+				int interest = scan.nextInt();
+				scan.nextLine();
 				
-			accArray[cnt++] = new HighCreditAccount(accNumber, name, balance, interest, grade);
+				//인스턴스형 배열 사용
+				//accArray[cnt++] = new NormalAccount(accNumber, name, balance, interest);
+				
+				//Set 컬렉션 사용 
+				accArray.add(new NormalAccount(accNumber, name, balance, interest));
+			}
+			else if(gubun==2) {
+				//신용신뢰계좌 생성
+				System.out.print("이자율:");
+				int interest = scan.nextInt();
+				scan.nextLine();
+				System.out.print("회원등급:");
+				String grade = scan.nextLine();
+				
+				//accArray[cnt++] = new HighCreditAccount(accNumber, name, balance, interest, grade);
+				HighCreditAccount hca = new HighCreditAccount(accNumber, name, balance, interest, grade);
+				accArray.add(hca);
 			}
 			System.out.println("--계좌 계설 완료--");		
 		} 
