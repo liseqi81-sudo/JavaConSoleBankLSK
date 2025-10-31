@@ -42,10 +42,10 @@ public class NormalAccount extends Account{
 				break;
 			} 
 			catch (NumberFormatException e) {
-			System.out.println("숫자만 입력하세요.");
+				System.out.println("숫자만 입력하세요.");
 			}
 			catch (IllegalArgumentException e) {
-			System.out.println(e.getMessage());
+				System.out.println(e.getMessage());
 			}	
 		}
 		

@@ -1,5 +1,6 @@
 package banking;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class AccountManager {
@@ -16,16 +17,18 @@ public class AccountManager {
 		scan = new Scanner(System.in);
 	}
 	public void makeAccount(int gubun) {
-		System.out.println("[manager]계좌개설을 위한 함수");
-		
+		System.out.println("=====================");
+
+		try {
+			
 		//공통사항 입력
-		System.out.print("계좌번호:");
-		String accNumber = scan.nextLine();
-		System.out.print("이름:");
-		String name = scan.nextLine();
-		System.out.print("잔액:");
-		int balance = scan.nextInt();
-		scan.nextLine();
+			System.out.print("계좌번호:");
+			String accNumber = scan.nextLine();
+			System.out.print("이름:");
+			String name = scan.nextLine();
+			System.out.print("잔액:");
+			int balance = scan.nextInt();
+			scan.nextLine();
 		
 		if(gubun==1) {
 			//보통계좌 생성
@@ -42,11 +45,19 @@ public class AccountManager {
 			scan.nextLine();
 			System.out.print("회원등급:");
 			String grade = scan.nextLine();
-			
+				
 			accArray[cnt++] = new HighCreditAccount(accNumber, name, balance, interest, grade);
+			}
+			System.out.println("--계좌 계설 완료--");		
+		} 
+		catch (InputMismatchException e) {
+		// 숫자 입력(잔액)에서 문자열이 들어왔을 때 예외 처리
+			System.out.println("메뉴는 1~5로 입력하세요.");
+			scan.nextLine();
+			return;
 		}
-		System.out.println("--계좌 계설 완료--");		
 	}
+	
 	public void depositMoney() {
 		
 		//Scanner scan = new Scanner(System.in);
@@ -70,8 +81,6 @@ public class AccountManager {
 	public void withdrawMoney() {
 		
 		//Scanner scan = new Scanner(System.in);
-		
-		
 		System.out.println("계좌번호와 출금할 금액을 입력하세요");
 		 
 		System.out.print("계좌번호:");
