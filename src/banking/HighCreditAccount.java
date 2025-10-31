@@ -24,7 +24,6 @@ public class HighCreditAccount extends Account{
 		double extraInterestRate = 0.0;
 		
 		while(true ) {
-			
 
 			try {
 				System.out.print("입금 할 금액을 입력하세요: ");
@@ -61,7 +60,7 @@ public class HighCreditAccount extends Account{
             break;
         default:
         	extraInterestRate = 0.0;
-    }
+		}
 		double baseInterest = this.balance * BASIC_INTEREST_RATE;
 	    double extraInterest = this.balance * extraInterestRate;
 		this.balance = (int) (this.balance + baseInterest + extraInterest + money);
@@ -72,13 +71,13 @@ public class HighCreditAccount extends Account{
         System.out.println("이자 금액: " + (int)Math.floor(baseInterest + extraInterest));
 		
 		
-		System.out.println(" 입금 및 이자 처리 완료!");
+		System.out.println(" 입금 및 이자 처리 완료되었습니다.");
 	
 }
 
     @Override
 	public void withdraw(int money) {
-while (true ) {
+    	while (true ) {
     		
         	System.out.print("출금 할 금액을 입력하세요: ");
         	String input = sc.nextLine();
@@ -112,7 +111,7 @@ while (true ) {
         		}
         	} 
 			catch (NumberFormatException e) {
-				System.out.println("오류 : 금액은 숫자로만 입력해야 합니다.");
+				System.out.println("금액은 숫자로만 입력해야 합니다.");
 			}
     	}	
     }

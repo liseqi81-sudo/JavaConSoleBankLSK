@@ -24,7 +24,8 @@ public interface ICustomDefine {
 	2입금
 	3출금
 	4전체계좌정보출력
-	5프로그램종료
+	5계좌정보삭제
+	6프로그램종료
 	*/
-	int MAKE=1, DEPOSIT=2, WITHDRAW=3, INQUIRE=4, EXIT=5;
+	int MAKE=1, DEPOSIT=2, WITHDRAW=3, INQUIRE=4, DELETE=5 ,EXIT=6;
 }

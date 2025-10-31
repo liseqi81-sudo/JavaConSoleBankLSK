@@ -19,7 +19,6 @@ public class NormalAccount extends Account{
 	public void deposit(int money) {
 		while(true ) {
 		
-
 			try {
 				System.out.print("입금 할 금액을 입력하세요: ");
 		        String input = sc.nextLine();
@@ -31,8 +30,7 @@ public class NormalAccount extends Account{
 					if(money % 500 !=0) {
 						System.out.println("입금 금액은 500원 단위로만 가능합니다.");
 		                continue;
-					}
-						
+					}	
 			    System.out.println("일반계좌 이자 계산하기");
 
 				double interest = this.balance*0.02;
